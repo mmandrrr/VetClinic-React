@@ -1,0 +1,95 @@
+.footer {
+    padding-top: 80px;
+    background-color: #59443F;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+
+    &_container {
+        max-width: 1490px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &_navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &_logo {
+        width: calc(290px + (325 - 290) * ((100vw - 320px)/(1920 - 320)));
+    }
+
+    &_menu {
+        display: flex;
+        padding-left: 115px;
+        gap: 100px;
+        margin-bottom: 60px;
+        flex-wrap: wrap;
+    }
+
+    &_confidential {
+        max-width: 200px;
+    }
+
+    &_services-link {
+        text-decoration: none;
+        color: #FFF;
+
+        &:hover {
+            color: #b8b8b8;
+        }
+    }
+
+    &_blog-link {
+        text-decoration: none;
+        color: #FFF;
+
+        &:hover {
+            color: #b8b8b8;
+        }
+    }
+
+    &_social-download {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    &_social-media {
+        display: flex;
+        margin-bottom: 30px;
+        gap: 50px;
+        
+        & img {
+            border-radius: 50%;
+        }
+
+        & img:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            box-shadow: 0px 0px 10px white;
+        }
+    }
+
+    &_social-contacts {
+        & span {
+            display: block;
+        }
+    }
+}
+
+@media(max-width:1200px) {
+    .footer {
+        &_logo {
+            align-self: center;
+        }
+
+        &_social {
+            margin: 0 auto;
+            margin-bottom: 100px;
+        }
+    }
+}
