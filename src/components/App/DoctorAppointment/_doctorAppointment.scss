@@ -1,0 +1,91 @@
+.appointment {
+    padding-top: 240px;
+    padding-bottom: 560px;
+
+    &_container {
+        max-width: 1492px;
+        margin: 0 auto;
+        display: flex;
+        gap: calc(50px + (180 - 50) * ((100vw - 320px)/(1920 - 320)));
+        flex-wrap: wrap;
+    }
+
+    &_title {
+        font-size: calc(50px + (80 - 50) * ((100vw - 320px)/(1920 - 320)));
+        line-height: 110px;
+        max-width: 375px;
+        align-self: center;
+    }
+
+    &_content {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    &_back {
+        line-height: 20px;
+        font-size: 20px;
+        text-decoration: none;
+        color: #FFC59E;
+        display: flex;
+        gap: 10px;
+
+        img {
+            width: 20px;
+            transform: rotate(180deg);
+            opacity: 0.7;
+        }
+
+        &:hover {
+            color: #fda870;
+
+            img {
+                opacity: 1;
+            }
+        }
+    }
+
+    &_services {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &_online {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        padding: 32px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.01);
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    &_online-text {
+        font-size: 20px;
+        line-height: 20px;
+        color: #080606;
+    }
+
+    &_online-price {
+        font-size: 20px;
+        line-height: 20px;
+        color: #080606;
+    }
+}
+
+@media(max-width:768px) {
+    .appointment {
+        padding-top: 350px;
+        padding-bottom: 250px;
+    }
+}

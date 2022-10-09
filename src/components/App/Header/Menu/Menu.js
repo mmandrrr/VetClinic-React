@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Menu = () => {
     return(
@@ -14,7 +14,7 @@ const Menu = () => {
                     </ul>  
                 </li>
                 <li className="header_menu-item"><a href="" className="header_menu-link">НОВОСТИ И АКЦИИ</a></li>
-                <li className="header_menu-item"><a href="" className="header_menu-link">КОНТАКТЫ</a></li>
+                <li className="header_menu-item"><Link to="/contacts" className="header_menu-link">КОНТАКТЫ</Link></li>
                 <li className="header_menu-item"><a href="" className="header_menu-link">БЛОГ</a></li>
             </ul>
         </nav>

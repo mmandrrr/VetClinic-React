@@ -37,6 +37,14 @@ body, * {
 @import '../components/App/Footer/_footer';
 
 
+// DOCTOR APPOINTMENT SECTION
+
+@import '../components/App/DoctorAppointment/_doctorAppointment';
+
+// DOCTOR APPOINTMENT FORM
+
+@import '../components/App/DoctorAppointment/AppoinmentForm/_appoinmentForm';
+
 .hide {
     display: none;
 }

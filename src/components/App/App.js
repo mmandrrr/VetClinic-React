@@ -4,6 +4,7 @@ import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
 import DoctorAppointment from './DoctorAppointment/DoctorAppointment';
+import ContactsPage from '../ContactsPage/ContactsPage';
 
 import '../../style/reset.css';
 import '../../style/style.css';
@@ -15,7 +16,8 @@ function App() {
           <Header/>
           <Routes>
             <Route path='/' element={<Main />} />
-            <Route path='appointment' element={<DoctorAppointment/>}/>
+            <Route path='appointment/*' element={<DoctorAppointment/>}/>
+            <Route path='contacts' element={<ContactsPage/>}/>
             <Route path='*' element={<Main />}/>
           </Routes>
           <Footer />
