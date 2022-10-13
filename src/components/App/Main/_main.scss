@@ -289,12 +289,16 @@
     }
 
     &_read-more {
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 20px;
-        color: #FFC59E;
-        text-align: center;
-        transition: all 0.3s ease;
+        a {
+            text-decoration: none;
+            display: block;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 20px;
+            color: #FFC59E;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
 
         & img {
             width: 15px;
@@ -453,7 +457,7 @@
     }
 
     &_title {
-        font-size: calc(60px + (80 - 60) * ((100vw - 320px)/(1920-320)));
+        font-size: calc(50px + (80 - 50) * ((100vw - 320px)/(1920-320)));
         line-height: 110px;
         max-width: 850px;
     }
@@ -462,6 +466,7 @@
         display: flex;
         align-items: center;
         margin-bottom: 215px;
+        flex-wrap: wrap;
     }
 }
 
@@ -469,6 +474,14 @@
     .app {
         &_subtitle, &_title {
             text-shadow: 0px 0px 5px #000;
+        }
+    }
+}
+
+@media(max-width:425px) {
+    .app {
+        &_download {
+            justify-content: center;
         }
     }
 }

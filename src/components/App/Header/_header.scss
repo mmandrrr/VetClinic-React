@@ -33,6 +33,10 @@
 
     &_menu-item:nth-child(2) {
         position: relative;
+        
+        & > div {
+            display: inline;
+        }
 
         &:hover {
             .header_about {

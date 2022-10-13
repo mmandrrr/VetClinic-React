@@ -45,6 +45,14 @@ body, * {
 
 @import '../components/App/DoctorAppointment/AppoinmentForm/_appoinmentForm';
 
+// COMPANY HISTORY
+
+@import '../components/App/CompStory/_compStory';
+
+// COLLECTIVE 
+
+@import '../components/App/Collective/_collective';
+
 .hide {
     display: none;
 }

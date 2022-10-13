@@ -6,11 +6,11 @@ const Menu = () => {
             <ul className="header_menu-list">
                 <li className="header_menu-item"><a href="" className="header_menu-link">ЛИЧНЫЙ КАБИНЕТ</a></li>
                 <li className="header_menu-item">
-                    <a href="" className="header_menu-link">О НАС </a> 
+                    <div href="" className="header_menu-link">О НАС </div> 
                     <ul className="header_about">
                         <li className="header_about-item"><a href="" className="header_about-link">Услуги и цены</a></li>
-                        <li className="header_about-item"><a href="" className="header_about-link">Коллектив</a></li>
-                        <li className="header_about-item"><a href="" className="header_about-link">История компании</a></li>
+                        <li className="header_about-item"><Link to="collective" className="header_about-link">Коллектив</Link></li>
+                        <li className="header_about-item"><Link to="/company-history" className="header_about-link">История компании</Link></li>
                     </ul>  
                 </li>
                 <li className="header_menu-item"><a href="" className="header_menu-link">НОВОСТИ И АКЦИИ</a></li>

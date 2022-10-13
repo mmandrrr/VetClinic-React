@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";;
 import { Form, Formik, Field, ErrorMessage } from "formik";
 import * as yup from 'yup';
 
-import arrow from '../../../../assets/History/right-arrow-forward-svgrepo-com.svg'
+import arrow from '../../../../assets/History/right-arrow-forward-svgrepo-com.svg';
 
 const AppoinmentForm = () => {
+    
+
     return(
         <div className="appointment_content">
             <Link to='/appointment' className="appointment_back"><img src={arrow} alt="Back" /> НАЗАД</Link>
@@ -27,8 +29,9 @@ const AppoinmentForm = () => {
                                 .required('Опишите проблему')
                                 .min(10,'Минимум 10 символов')
                 })}
-                onSubmit = {values => {
+                onSubmit = {(values, {resetForm}) => {
                     console.log(values)
+                    resetForm({values : ''})
                 }}
             >
                 <Form className="form">

@@ -8,10 +8,19 @@ import youtube from '../../../../../assets/Social/youtube.svg';
 
 const Slides = ({title,className}) => {
 
+    const scrollToTop = (e,element) => {
+        e.preventDefault
+        element.scrollIntoView(true)
+    }
+
     return(
         <div className={className}>
             <div className="slider_item-title">{title}</div>
-            <Link to='/appointment' className="slider_item-button">записаться</Link>
+            <Link 
+                to='/appointment' 
+                className="slider_item-button"
+                onClick={(e) => scrollToTop(e,document.querySelector('.header'))}
+            >записаться</Link>
             <div className="slider_item-social">
                 <img src={inst} alt="Instagramm"/>
                 <img src={fb} alt="Facebook"/>

@@ -1,7 +1,7 @@
 
-import location from '../../assets/Address/address-location.svg';
-import phone from '../../assets/Address/address-phone.svg';
-import time from '../../assets/Address/address-time.svg';
+import location from '../../../assets/Address/address-location.svg';
+import phone from '../../../assets/Address/address-phone.svg';
+import time from '../../../assets/Address/address-time.svg';
 
 const ContactsPage = () => {
     return(

@@ -20,6 +20,7 @@
 
     &_logo {
         width: calc(290px + (325 - 290) * ((100vw - 320px)/(1920 - 320)));
+        max-width: 100%;
     }
 
     &_menu {
@@ -56,12 +57,16 @@
         display: flex;
         align-items: center;
         margin-bottom: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     &_social-media {
         display: flex;
         margin-bottom: 30px;
         gap: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
         
         & img {
             border-radius: 50%;
@@ -91,5 +96,12 @@
             margin: 0 auto;
             margin-bottom: 100px;
         }
+    }
+}
+
+@media(max-width:425px) {
+    .footer_menu {
+        padding-left: 0;
+        justify-content: center;
     }
 }
