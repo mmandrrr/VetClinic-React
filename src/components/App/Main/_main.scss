@@ -85,14 +85,14 @@
 
             &:hover {
                 cursor: pointer;
-                border: 2px solid #080606;
-                border-right: none;
+                color: #59443F;
             }
 		}
 
         &_counter-item-active {
             border: 2px solid #080606;
             border-right: none;
+            color: #59443F;
         }
 
 		&_content {

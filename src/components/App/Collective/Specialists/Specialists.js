@@ -6,9 +6,19 @@ import { specialistsData } from "./specialistsData"
 
 const Specialists = () => {
 
+    const scrollToTop = (e,element) => {
+        element.preventDefault
+        element.scrollIntoView(true)
+    }
+
     const specialist = specialistsData.map(({photo,experience,id,name,specialization}) => {
         return(
-            <Link to={`/collective/${id}`} key = {id} style={{textDecoration : 'none', display : 'flex'}}>
+            <Link
+                onClick={(e) => scrollToTop(e,document.querySelector('.header'))}  
+                to={`/collective/${id}`} 
+                key = {id} 
+                style={{textDecoration : 'none', display : 'flex'}}
+            >
                 <SpecialistInfo 
                     key = {id}
                     id = {id}

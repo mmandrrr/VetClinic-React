@@ -100,9 +100,14 @@
         &:hover {
             cursor: pointer;
         }
+
+        &:hover .header_location-city{
+            color: #59443F;
+        }
     }
 
     &_location-city {
+        font-weight: 700;
         color: #FFC59E;
         text-transform: uppercase;
     }

@@ -7,7 +7,7 @@ import DoctorAppointment from './DoctorAppointment/DoctorAppointment';
 import ContactsPage from '../App/ContactsPage/ContactsPage';
 import CompStory from './CompStory/CompStory';
 import Collective from './Collective/Collective';
-import SpecialistPage from './Collective/SpecialisPage/SpecialistPage';
+import SpecialistPage from './Collective/SpecialistPage/SpecialistPage';
 
 import '../../style/reset.css';
 import '../../style/style.css';
