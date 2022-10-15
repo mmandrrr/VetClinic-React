@@ -13,9 +13,9 @@ const Menu = () => {
                         <li className="header_about-item"><Link to="/company-history" className="header_about-link">История компании</Link></li>
                     </ul>  
                 </li>
-                <li className="header_menu-item"><a href="" className="header_menu-link">НОВОСТИ И АКЦИИ</a></li>
+                <li className="header_menu-item"><Link to="/news" className="header_menu-link">НОВОСТИ И АКЦИИ</Link></li>
                 <li className="header_menu-item"><Link to="/contacts" className="header_menu-link">КОНТАКТЫ</Link></li>
-                <li className="header_menu-item"><a href="" className="header_menu-link">БЛОГ</a></li>
+                <li className="header_menu-item"><Link to="/blog" className="header_menu-link">БЛОГ</Link></li>
             </ul>
         </nav>
     )

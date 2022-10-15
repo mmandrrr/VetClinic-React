@@ -8,6 +8,10 @@ import ContactsPage from '../App/ContactsPage/ContactsPage';
 import CompStory from './CompStory/CompStory';
 import Collective from './Collective/Collective';
 import SpecialistPage from './Collective/SpecialistPage/SpecialistPage';
+import Blog from './Blog/Blog';
+import BlogPage from './Blog/BlogPage/BlogPage';
+import News from './News/News';
+import NewsPage from './News/NewsPage/NewsPage';
 
 import '../../style/reset.css';
 import '../../style/style.css';
@@ -24,6 +28,10 @@ function App() {
             <Route path='/company-history' element={<CompStory />} />
             <Route path='/collective' element={<Collective />}/>
             <Route path='/collective/*' element={<SpecialistPage />} />
+            <Route path='/blog' element={<Blog />} />
+            <Route path='/blog/*' element={<BlogPage />} />
+            <Route path='/news' element={<News />}/>
+            <Route path='/news/*' element={<NewsPage />}/>
             <Route path='*' element={<Main />}/>
           </Routes>
           <Footer />

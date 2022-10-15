@@ -43,8 +43,14 @@ const Navigation = () => {
                         className="footer_blog-item"><Link to="contacts" className="footer_blog-link">Контакты</Link></li>
                     <li className="footer_blog-item"><a href="" className="footer_blog-link">Груминг-салон</a></li>
                     <li className="footer_blog-item"><a href="" className="footer_blog-link">Косметика</a></li>
-                    <li className="footer_blog-item"><a href="" className="footer_blog-link">Новости и акции</a></li>
-                    <li className="footer_blog-item"><a href="" className="footer_blog-link">Блог</a></li>
+                    <li 
+                        onClick={(e) => scrollToTop(e,document.querySelector('.header'))}
+                        className="footer_blog-item"><Link to="/news" className="footer_blog-link"
+                    >Новости и акции</Link></li>
+                    <li 
+                        onClick={(e) => scrollToTop(e,document.querySelector('.header'))}
+                        className="footer_blog-item"><Link to="/blog" className="footer_blog-link"
+                    >Блог</Link></li>
                 </ul>
             </div>
         </div>

@@ -57,6 +57,14 @@ body, * {
 
 @import '../components/App/Collective/SpecialistPage/_specialistPage';
 
+// BLOG
+
+@import '../components/App/Blog/_blog';
+
+// NEWS 
+
+@import '../components/App/News/_news';
+
 .hide {
     display: none;
 }
