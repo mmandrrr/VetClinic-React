@@ -1,3 +1,4 @@
+
 import ivanova from '../../../../assets/Collective/Ivanova.png'
 import konstant from '../../../../assets/Collective/Konstant.png'
 import melnyuk from '../../../../assets/Collective/Melnyuk.png'
@@ -58,6 +59,83 @@ export const specialistsData = [
                 review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
                 emoji : '',
                 id : 3
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Александр',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 4
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Дмитрий',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 5
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Маргарита',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 6
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Александр',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 7
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Дмитрий',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 8
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Маргарита',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 9
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Маргарита',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 10
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Александр',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 11
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Дмитрий',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 12
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Маргарита',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 13
+            },
+            {
+                profilePhoto : ivanova,
+                userName : 'Маргарита',
+                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+                emoji : '',
+                id : 14
             },
         ]
     },
@@ -437,13 +515,43 @@ export const specialistsData = [
                 emoji : '',
                 id : 2
             },
-            {
-                profilePhoto : ivanova,
-                userName : 'Маргарита',
-                review : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
-                emoji : '',
-                id : 3
-            },
         ]
     },
 ]
+
+class getSpecialistReview {
+    showSection = (i,Element,num) => {
+        const reviews = specialistsData[num].reviews;
+        const section = [reviews[i],reviews[i + 1],reviews[i + 2],reviews[i + 3]];
+        const list = section.map(item => {
+            if(item) {
+                return(
+                    <Element
+                        key = {item.id}
+                        profilePhoto = {item.profilePhoto}
+                        userName = {item.userName}
+                        review = {item.review}
+                        specPhoto = {specialistsData[num].photo}
+                    />
+                )
+            }
+            return null
+        })
+        return list
+    }
+
+    createList = (id) => {
+        const ul =  document.querySelector('.specialist-page_overview-counter > ul')
+        if(ul) {
+            const listCount = Math.ceil(specialistsData[id].reviews.length / 4);
+            const arr = []
+            for(let i = 0; i < listCount; i++) {
+                arr.push(i)
+            }
+            return arr
+        }
+        return null
+    }
+}
+
+export default getSpecialistReview

@@ -1,16 +1,43 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import ReviewItem from "./ReviewItem/ReviewItem";
 import CourseItem from "./CourseItem/CourseItem";
 
-import { specialistsData } from "../Specialists/specialistsData"
+import { specialistsData } from "../Specialists/specialistsData";
+import getSpecialistReview from "../Specialists/specialistsData";
 
 import arrow from '../../../../assets/History/right-arrow-forward-svgrepo-com.svg'
+
 
 const SpecialistPage = () => {
 
     const userId = document.location.pathname.split('/')[2],
-          user   = specialistsData[userId];
+          user   = specialistsData[userId],
+          reviews = new getSpecialistReview();
+    
+    const [reviewList, setReviewList] = useState([]);
+    const [list, setList] = useState([]);
+
+    const updateReviews = (key) => {
+        const newList = reviews.showSection(key,ReviewItem,userId);
+        setReviewList(newList)
+    }
+    
+    useEffect(() => {
+        updateReviews(0)
+    },[])
+
+    useEffect(() => {
+        const newList = reviews.createList(userId);
+        setList(newList);
+    },[])
+
+    const changeReviewCounter = (e) => {
+        const i = +e.target.id;
+        updateReviews(i * 4);
+    }
 
     const coursesList = user.courses.map(({year,coursesName,id}) => {
         return(
@@ -20,17 +47,17 @@ const SpecialistPage = () => {
                 year = {year}
             />
         )
-    })
+    })  
 
-    const reviewList = user.reviews.map(({profilePhoto,userName,review,id}) => {
+    const vieverList = list.map((item,i) => {
         return(
-            <ReviewItem 
-                key = {id}
-                profilePhoto = {profilePhoto}
-                userName = {userName}
-                review = {review}
-                specPhoto = {user.photo}
-            />
+            <li
+                onClick={(e) => {
+                    changeReviewCounter(e);
+                }}
+                key={i}
+                id = {i}
+            >{item + 1}</li>
         )
     })
 
@@ -62,14 +89,11 @@ const SpecialistPage = () => {
                         <div className="specialist-page_overview-header">
                             <div className="specialist-page_overview-title">
                                 Отзывы
-                                <span>{reviewList.length} отзывa</span>
+                                <span>{user.reviews.length} отзывa</span>
                             </div>
                             <div className="specialist-page_overview-counter">
                                 <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                    <li>4</li>
+                                    {vieverList}
                                 </ul>
                             </div>
                         </div>
