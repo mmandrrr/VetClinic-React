@@ -522,7 +522,13 @@ export const specialistsData = [
 class getSpecialistReview {
     showSection = (i,Element,num) => {
         const reviews = specialistsData[num].reviews;
-        const section = [reviews[i],reviews[i + 1],reviews[i + 2],reviews[i + 3]];
+        const section = [];
+        for(let n = i; n < i + 4; n++) {
+            if(reviews[n]) {
+                section.push(reviews[n]);
+            }
+        }
+        console.log(section);
         const list = section.map(item => {
             if(item) {
                 return(

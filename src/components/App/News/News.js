@@ -1,23 +1,38 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-import NewsItem from "./NewsItem/NewsItem"
+import NewsItem from "./NewsItem/NewsItem";
 
-import {newsData} from './NewsItem/newsData'
+import ShowNews from "./NewsItem/newsData";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const News = () => {
+    const [newsList, setNewList] = useState([]);
 
-    const newsList = newsData.map(({id,img,date,title,text}) => {
-        return(
-            <Link to={`/news/${id}`} style={{textDecoration : 'none'}} key={id}>
-                <NewsItem 
-                    img = {img}
-                    date = {date}
-                    title = {title}
-                    text = {text}
-                />
-            </Link>
-        )
-    })
+    const section = new ShowNews();
+
+    useEffect(() => {
+        const newNewsList = section.getNewsList(0,NewsItem);
+        setNewList(newNewsList)
+    },[])
+
+    const updateNewsList = (e) => {
+        const id = e.target.id;
+        const newList = section.getNewsList(id * 4,NewsItem);
+        setNewList(newList)
+    }
+
+    const counter = section.createCounter().map((item,i) => {
+                return(
+                    <li 
+                        onClick={(e) => updateNewsList(e)}
+                        id={i}
+                        key={i} 
+                        className="news_list-item"
+                    >{item}</li>
+                )
+            })
+    
 
     return(
         <section className="news">
@@ -27,10 +42,7 @@ const News = () => {
             </div>
             <div className="news_content">
                 <ul className="news_list">
-                    <li className="news_list-item"><a href="" className="news_list-link">1</a></li>
-                    <li className="news_list-item"><a href="" className="news_list-link">2</a></li>
-                    <li className="news_list-item"><a href="" className="news_list-link">3</a></li>
-                    <li className="news_list-item"><a href="" className="news_list-link">4</a></li>
+                    {counter}
                 </ul>
                 <div className="news_content-list">
                     {newsList}

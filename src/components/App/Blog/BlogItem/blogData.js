@@ -1,4 +1,6 @@
-import blogImg from '../../../../assets/Blog/blog-image.png'
+import { Link } from 'react-router-dom';
+
+import blogImg from '../../../../assets/Blog/blog-image.png';
 
 export const blogData = [
     {
@@ -42,3 +44,39 @@ export const blogData = [
         text : 'Данные клинического осмотра, указывающие на наличие наружного отита, включают такие признаки, как отек и эритема ушной раковины, выделения из ушей, болезненная реакция и/или беспокойство при пальпации наружного слухового хода и потряхивание головой после т ...',
     },
 ]
+
+class ShowBlog {
+
+    getBlogList = (i,Element) => {
+        const section = [];
+        for(let n = i; n < i + 4; n++) {
+            if(blogData[n]) {
+                section.push(blogData[n])
+            }
+        }
+        const list = section.map(item => {
+            return(
+                <Link to={`/blog/${item.id}`} style={{textDecoration : 'none'}} key={item.id}>
+                    <Element 
+                        img = {item.img}
+                        date = {item.date}
+                        title = {item.title}
+                        text = {item.text}
+                    />
+                </Link>
+            )
+        })
+        return list
+    }
+
+    createCounter = () => {
+        const count = Math.ceil(blogData.length / 4);
+        const listArr = [];
+        for(let i = 1; i <= count; i++) {
+            listArr.push(i)
+        }
+        return listArr;
+    }
+}
+
+export default ShowBlog

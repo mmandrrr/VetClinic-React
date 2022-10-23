@@ -1,23 +1,38 @@
-import { Link } from "react-router-dom"
+import { useState, useEffect } from "react";
 
-import BlogItem from "./BlogItem/BlogItem"
+import { Link } from "react-router-dom";
 
-import {blogData} from './BlogItem/blogData'
+import BlogItem from "./BlogItem/BlogItem";
+
+import ShowBlog from "./BlogItem/blogData";
 
 const Blog = () => {
 
-    const blogList = blogData.map(({id,img,date,title,text}) => {
-        return(
-            <Link to={`/blog/${id}`} style={{textDecoration : 'none'}} key={id}>
-                <BlogItem 
-                    img = {img}
-                    date = {date}
-                    title = {title}
-                    text = {text}
-                />
-            </Link>
-        )
-    })
+    const [blogList, setBlogList] = useState([]);
+
+    const section = new ShowBlog();
+
+    useEffect(() => {
+        const newblogList = section.getBlogList(0,BlogItem);
+        setBlogList(newblogList)
+    },[])
+
+    const updateBlogList = (e) => {
+        const id = e.target.id;
+        const newList = section.getBlogList(id * 4,BlogItem);
+        setBlogList(newList)
+    }
+
+    const counter = section.createCounter().map((item,i) => {
+                return(
+                    <li 
+                        onClick={(e) => updateBlogList(e)}
+                        id={i}
+                        key={i} 
+                        className="blog_list-item"
+                    >{item}</li>
+                )
+            })
 
     return(
         <section className="blog">
@@ -31,10 +46,7 @@ const Blog = () => {
             </div>
             <div className="blog_content">
                 <ul className="blog_list">
-                    <li className="blog_list-item"><a href="" className="blog_list-link">1</a></li>
-                    <li className="blog_list-item"><a href="" className="blog_list-link">2</a></li>
-                    <li className="blog_list-item"><a href="" className="blog_list-link">3</a></li>
-                    <li className="blog_list-item"><a href="" className="blog_list-link">4</a></li>
+                    {counter}
                 </ul>
                 <div className="blog_content-list">
                     {blogList}

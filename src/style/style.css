@@ -2241,14 +2241,15 @@ body, * {
       align-self: flex-end;
 }
 
-.news_list-link {
+.news_list-item {
   text-decoration: none;
   font-size: 20px;
   line-height: 30px;
   color: #C3B9B5;
 }
 
-.news_list-link:hover {
+.news_list-item:hover {
+  cursor: pointer;
   color: #080606;
 }
 

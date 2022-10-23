@@ -61,15 +61,13 @@
     }
 
     &_list-item {
-    }
-
-    &_list-link {
         text-decoration: none;
         font-size: 20px;
         line-height: 30px;
         color: #C3B9B5;
 
         &:hover {
+            cursor: pointer;
             color: #080606;
         }
     }
