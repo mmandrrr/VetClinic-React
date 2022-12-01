@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 import * as yup from 'yup';
 
 import { Link } from "react-router-dom";;
