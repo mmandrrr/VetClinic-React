@@ -28,7 +28,6 @@ const Blog = () => {
                     <li 
                         onClick={(e) => {
                             updateBlogList(e)
-                            clearClass(e)
                             }}
                         id={i}
                         key={i} 

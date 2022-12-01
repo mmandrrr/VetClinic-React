@@ -1,9 +1,9 @@
+import * as yup from 'yup';
+
 import { Link } from "react-router-dom";;
 import { Form, Formik, Field, ErrorMessage } from "formik";
 
 import arrow from '../../../../assets/History/right-arrow-forward-svgrepo-com.svg';
-
-import * as yup from 'yup';
 
 const AppoinmentForm = () => {
     
