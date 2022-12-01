@@ -2037,6 +2037,18 @@ body, * {
       align-self: flex-end;
 }
 
+.blog_list-item {
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 30px;
+  color: #C3B9B5;
+}
+
+.blog_list-item:hover {
+  cursor: pointer;
+  color: #080606;
+}
+
 .blog_list-link {
   text-decoration: none;
   font-size: 20px;

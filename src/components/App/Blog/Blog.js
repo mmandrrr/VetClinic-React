@@ -26,10 +26,13 @@ const Blog = () => {
     const counter = section.createCounter().map((item,i) => {
                 return(
                     <li 
-                        onClick={(e) => updateBlogList(e)}
+                        onClick={(e) => {
+                            updateBlogList(e)
+                            clearClass(e)
+                            }}
                         id={i}
                         key={i} 
-                        className="blog_list-item"
+                        className='blog_list-item'
                     >{item}</li>
                 )
             })

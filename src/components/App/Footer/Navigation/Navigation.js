@@ -5,7 +5,7 @@ import logo from '../../../../assets/Logos/footerLogo.svg';
 const Navigation = () => {
 
     const scrollToTop = (e,element) => {
-        e.preventDefault
+        e.preventDefault()
         element.scrollIntoView(true)
     }
 

@@ -5,7 +5,7 @@ import collective from '../../../assets/Collective/сollective.png'
 const Collective = () => {
 
     const scrollToTop = (e,element) => {
-        e.preventDefault
+        e.preventDefault()
         element.scrollIntoView(true)
     }
 
