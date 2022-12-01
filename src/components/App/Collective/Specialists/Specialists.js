@@ -7,7 +7,6 @@ import { specialistsData } from "./specialistsData"
 const Specialists = () => {
 
     const scrollToTop = (e,element) => {
-        e.preventDefault()
         element.scrollIntoView(true)
     }
 

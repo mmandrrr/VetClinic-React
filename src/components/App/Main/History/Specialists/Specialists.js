@@ -7,7 +7,6 @@ import {specialistsData} from '../../../Collective/Specialists/specialistsData';
 
 const Specialist = () => {
     const scrollToTop = (e,element) => {
-        e.preventDefault()
         element.scrollIntoView(true)
     }
 

@@ -9,7 +9,6 @@ import youtube from '../../../../../assets/Social/youtube.svg';
 const Slides = ({title,className}) => {
 
     const scrollToTop = (e,element) => {
-        e.preventDefault()
         element.scrollIntoView(true)
     }
 
