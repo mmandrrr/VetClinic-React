@@ -4,7 +4,6 @@ import arrowRight from '../../../../../assets/History/right-arrow-forward-svgrep
 
 const Content = () => {
     const scrollToTop = (e,element) => {
-        e.preventDefault()
         element.scrollIntoView(true)
     }
 
