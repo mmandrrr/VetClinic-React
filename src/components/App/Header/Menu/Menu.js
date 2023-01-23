@@ -8,7 +8,7 @@ const Menu = () => {
                 <li className="header_menu-item">
                     <div href="" className="header_menu-link">О НАС </div> 
                     <ul className="header_about">
-                        <li className="header_about-item"><a href="" className="header_about-link">Услуги и цены</a></li>
+                        <li className="header_about-item"><Link to='/service' className="header_about-link">Услуги и цены</Link></li>
                         <li className="header_about-item"><Link to="collective" className="header_about-link">Коллектив</Link></li>
                         <li className="header_about-item"><Link to="/company-history" className="header_about-link">История компании</Link></li>
                     </ul>  

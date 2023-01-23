@@ -1,0 +1,222 @@
+[class*=-subtitle] {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    color: #080606;
+}
+
+.service {
+    padding-top: 246px;
+
+    &_container {
+        max-width: 1490px;
+        padding: 0 15px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    &_title {
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    &_title-text {
+        font-weight: 400;
+        font-size: 80px;
+        line-height: 110px;
+        color: #080606;
+    }
+
+    &_title-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 100px;
+    }
+
+    &_menu-link {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+        color: #C3B9B5;
+
+        &:hover {
+            color: #a79994;
+        }
+    }
+
+    &_content {
+        max-width: 909px;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    &_specialists {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &_specialists-list {
+        display: flex;
+        gap: 20px;
+        max-width: 80vw;
+    }
+
+    &_specialists-item {
+        background: #FFFFFF;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        display: flex;
+        gap: 16px;
+        padding: 20px;
+        transition: all 0.3s linear;
+
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.01);
+        }
+    }
+
+    &_specialists-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &_specialists-name {
+        font-weight: 450;
+        font-size: 24px;
+        line-height: 20px;
+        color: #080606;
+    }
+
+    &_specialists-date {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        color: #C3B9B5;
+    }
+
+    &_description {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &_description-content {
+        font-size: 20px;
+        line-height: 30px;
+        color: #59443F;
+
+        p {
+            margin-bottom: 30px;
+        }
+    }
+
+    &_first-sub {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &_first-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        font-size: 20px;
+        line-height: 30px;
+        color: #59443F;
+
+        img {
+            max-width: 80vw;
+            align-self: center;
+        }
+    }
+
+    &_second-sub {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &_second-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        font-size: 20px;
+        line-height: 30px;
+        color: #59443F;
+    }
+
+    &_prices {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 154px;
+    }
+
+    &_prices-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            font-size: 20px;
+            line-height: 30px;
+            color: #59443F;
+        }
+    }
+
+    &_prices-counter {
+        display: flex;
+        gap: 16px;
+    }
+
+    &_prices-count {
+        font-size: 20px;
+        line-height: 30px;
+        color: #080606;
+    }
+
+    &_prices-list {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &_prices-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        line-height: 20px;
+        color: #080606;
+        background: rgba(237, 233, 232, 0.3);
+        border-radius: 15px;
+        padding: 14px 30px;
+    }
+}
+
+@media(max-width:1247px) {
+    .service {
+        &_title {
+            margin: 0 auto;
+        }
+
+        &_content {
+            margin: 0 auto;
+        }
+    }
+}

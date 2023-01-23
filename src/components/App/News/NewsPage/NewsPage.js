@@ -1,8 +1,9 @@
 import { newsData } from "../NewsItem/newsData";
+import { getPageId } from '../../../../services/getPageId/getPageId'
 
 const NewsPage = () => {
 
-    const pageId = document.location.pathname.split('/')[2],
+    const pageId = getPageId(2),
             page = newsData[pageId];
 
     return(

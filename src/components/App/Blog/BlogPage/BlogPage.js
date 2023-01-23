@@ -1,8 +1,9 @@
 import { blogData } from "../BlogItem/blogData";
+import { getPageId } from "../../../../services/getPageId/getPageId";
 
 const BlogPage = () => {
 
-    const pageId = document.location.pathname.split('/')[2],
+    const pageId = getPageId(2),
             page = blogData[pageId];
 
     return(

@@ -3,19 +3,18 @@ import { Link } from 'react-router-dom';
 import arrowRight from '../../../../../assets/History/right-arrow-forward-svgrepo-com.svg';
 import specialist from '../../../../../assets/History/specialist.png';
 
+import { scrollToElementWithPrevent } from '../../../../../services/scrollToElement/scrollToElement';
+
 import {specialistsData} from '../../../Collective/Specialists/specialistsData';
 
 const Specialist = () => {
-    const scrollToTop = (e,element) => {
-        element.scrollIntoView(true)
-    }
 
    const imgList = specialistsData.map(({photo,id}) => {
     return(
         <Link
             key={id}
             to={`collective/${id}`}    
-            onClick={(e) => scrollToTop(e,document.querySelector('.header'))}
+            onClick={(e) => scrollToElementWithoutPrevent(e,document.querySelector('.header'))}
         >
             <img src={photo} alt="Specialist"/>
         </Link>
@@ -30,7 +29,7 @@ const Specialist = () => {
             </div>
             <div className="history_read-more">
             <Link 
-                onClick={(e) => scrollToTop(e,document.querySelector('.header'))} 
+                onClick={(e) => scrollToElementWithPrevent(e,document.querySelector('.header'))} 
                 to='collective'
             >ПОСМОТРЕТЬ ВСЕХ <img src={arrowRight} alt="Read More"/></Link></div>
         </div>

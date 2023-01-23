@@ -6,14 +6,16 @@ import ReviewItem from "./ReviewItem/ReviewItem";
 import CourseItem from "./CourseItem/CourseItem";
 
 import { specialistsData } from "../Specialists/specialistsData";
-import getSpecialistReview from "../Specialists/specialistsData";
+import { scrollToElementWithoutPrevent } from "../../../../services/scrollToElement/scrollToElement";
+import { getPageId } from "../../../../services/getPageId/getPageId";
+import getSpecialistReview from "../../../../services/getSpecialistReview/getSpecialistReview";
 
 import arrow from '../../../../assets/History/right-arrow-forward-svgrepo-com.svg'
 
 
 const SpecialistPage = () => {
 
-    const userId = document.location.pathname.split('/')[2],
+    const userId = getPageId(2),
           user   = specialistsData[userId],
           reviews = new getSpecialistReview();
     
@@ -24,7 +26,7 @@ const SpecialistPage = () => {
         const newList = reviews.showSection(key,ReviewItem,userId);
         setReviewList(newList)
     }
-    
+
     useEffect(() => {
         updateReviews(0)
     },[])
@@ -68,7 +70,10 @@ const SpecialistPage = () => {
                     <img src={user.photo} alt="" className="specialist-page_profile-picture" />
                     <div className="specialist-page_profile-date"><span>ближайшая дата приема: 29.11.22</span></div>
                     <div className="specialist-page_interaction">
-                        <div className="specialist-page_sign-up">ЗАПИСАТЬСЯ</div>
+                        <Link 
+                            to='/appointment' 
+                            className="specialist-page_sign-up"
+                            onClick={() => {scrollToElementWithoutPrevent(document.querySelector('.header'))}}>ЗАПИСАТЬСЯ</Link>
                         <div className="specialist-page_write-overview">ОСТАВИТЬ ОТЗЫВ</div>
                     </div>
                 </div>

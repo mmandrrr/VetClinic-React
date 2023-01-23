@@ -1,13 +1,10 @@
 import Specialists from "./Specialists/Specialists";
 
-import collective from '../../../assets/Collective/сollective.png'
+import collective from '../../../assets/Collective/сollective.png';
+
+import { scrollToElementWithPrevent } from "../../../services/scrollToElement/scrollToElement";
 
 const Collective = () => {
-
-    const scrollToTop = (e,element) => {
-        e.preventDefault()
-        element.scrollIntoView(true)
-    }
 
     return(
         <section className="collective">
@@ -17,11 +14,11 @@ const Collective = () => {
                     <div className="collective_subtitles">
                         <h2 
                             className="collective_subtitle"
-                            onClick={(e) => scrollToTop(e,document.querySelector('.collective_description-title'))}    
+                            onClick={(e) => scrollToElementWithPrevent(e,document.querySelector('.collective_description-title'))}    
                         >О НАС</h2>
                         <h2 
                             className="collective_subtitle"
-                            onClick={(e) => scrollToTop(e,document.querySelector('.collective_specialists'))}    
+                            onClick={(e) => scrollToElementWithPrevent(e,document.querySelector('.collective_specialists'))}    
                         >СПЕЦИАЛИСТЫ</h2>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import BlogItem from "./BlogItem/BlogItem";
 
-import ShowBlog from "./BlogItem/blogData";
+import ShowBlog from "../../../services/showBlog/showBlog";
 
 const Blog = () => {
 

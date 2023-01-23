@@ -65,6 +65,10 @@ body, * {
 
 @import '../components/App/News/_news';
 
+// SINGLESERVICE 
+
+@import '../components/App/SingleService/_singleService.scss';
+
 .hide {
     display: none;
 }

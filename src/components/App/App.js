@@ -12,6 +12,7 @@ import Blog from './Blog/Blog';
 import BlogPage from './Blog/BlogPage/BlogPage';
 import News from './News/News';
 import NewsPage from './News/NewsPage/NewsPage';
+import SingleService from './SingleService/SingleService';
 
 import '../../style/reset.css';
 import '../../style/style.css';
@@ -33,6 +34,7 @@ function App() {
             <Route path='/news' element={<News />}/>
             <Route path='/news/*' element={<NewsPage />}/>
             <Route path='*' element={<Main />}/>
+            <Route path='/service/*' element={<SingleService />}/>
           </Routes>
           <Footer />
         </div>

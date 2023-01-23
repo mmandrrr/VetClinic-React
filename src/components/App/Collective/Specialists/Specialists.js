@@ -1,19 +1,16 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-import SpecialistInfo from "./SpecialistInfo/SpecialistInfo"
+import SpecialistInfo from "./SpecialistInfo/SpecialistInfo";
 
-import { specialistsData } from "./specialistsData"
+import { specialistsData } from "./specialistsData";
+import { scrollToElementWithoutPrevent } from "../../../../services/scrollToElement/scrollToElement";
 
 const Specialists = () => {
-
-    const scrollToTop = (e,element) => {
-        element.scrollIntoView(true)
-    }
 
     const specialist = specialistsData.map(({photo,experience,id,name,specialization}) => {
         return(
             <Link
-                onClick={(e) => scrollToTop(e,document.querySelector('.header'))}  
+                onClick={() => scrollToElementWithoutPrevent(document.querySelector('.header'))}  
                 to={`/collective/${id}`} 
                 key = {id} 
                 style={{textDecoration : 'none', display : 'flex'}}
